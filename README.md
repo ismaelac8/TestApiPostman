@@ -47,7 +47,7 @@ The project provides the following endpoints:
 
 ![CMD - API]([(https://github.com/ismaelac8/TestApiPostman/blob/main/img/API_CON.png?raw=true))
 
-![Register]([https://github.com/tu-usuario/tu-repositorio/blob/main/imagen.jpg](https://github.com/ismaelac8/TestApiPostman/blob/main/img/POST_1.png))
+![Register](https://github.com/ismaelac8/TestApiPostman/blob/main/img/POST_1.png)
 
 ![Fail Register]([https://github.com/tu-usuario/tu-repositorio/blob/main/imagen.jpg](https://github.com/ismaelac8/TestApiPostman/blob/main/img/POST_LESSNAME.png))
 

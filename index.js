@@ -1,6 +1,9 @@
 const express = require('express');
-const { body, validationResult } = require('express-validator');
+const mongoose = require('mongoose');
 const cors = require('cors');
+const userRoutes = require('./routes/userRoutes');
+const swaggerDocs = require('./swagger');
+const config = require('./config');
 
 const app = express();
 const port = 3000;
@@ -8,46 +11,18 @@ const port = 3000;
 app.use(express.json());
 app.use(cors());
 
-const usuarios = [];
+// Conectar a la base de datos
+mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Conectado a MongoDB'))
+  .catch(err => console.error('Error al conectar a MongoDB', err));
 
-app.get('/', (req, res) => {
-  res.send('¡Hola, mundo!');
-});
+// Rutas
+app.use('/api', userRoutes);
 
-app.get('/saludo/:nombre', (req, res) => {
-  const nombre = req.params.nombre;
-  res.send(`¡Hola, ${nombre}!`);
-});
+// Swagger
+swaggerDocs(app);
 
-app.get('/usuarios', (req, res) => {
-  res.json(usuarios);
-});
-
-app.post('/usuarios', [
-  body('nombre').notEmpty().withMessage('El nombre es obligatorio'),
-  body('email').isEmail().withMessage('Debe ser un email válido')
-], (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
-
-  const usuario = req.body;
-  usuarios.push(usuario);
-  res.status(201).send(`Usuario ${usuario.nombre} creado con éxito`);
-});
-
-app.delete('/usuarios/:nombre', (req, res) => {
-  const nombre = req.params.nombre;
-  const index = usuarios.findIndex(user => user.nombre === nombre);
-  if (index !== -1) {
-    usuarios.splice(index, 1);
-    res.send(`Usuario ${nombre} eliminado con éxito`);
-  } else {
-    res.status(404).send(`Usuario ${nombre} no encontrado`);
-  }
-});
-
+// Middleware de manejo de errores
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('¡Algo salió mal!');

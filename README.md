@@ -45,17 +45,23 @@ The project provides the following endpoints:
 
 ## Images of execution
 
-![CMD - API]([(https://github.com/ismaelac8/TestApiPostman/blob/main/img/API_CON.png?raw=true))
+CMD - API
+![CMD - API](https://github.com/ismaelac8/TestApiPostman/blob/main/img/API_CON.png)
 
+REGISTER
 ![Register](https://github.com/ismaelac8/TestApiPostman/blob/main/img/POST_1.png)
 
-![Fail Register]([https://github.com/tu-usuario/tu-repositorio/blob/main/imagen.jpg](https://github.com/ismaelac8/TestApiPostman/blob/main/img/POST_LESSNAME.png))
+FAIL REGISTER
+![Fail Register](https://github.com/ismaelac8/TestApiPostman/blob/main/img/POST_LESSNAME.png)
 
-![Login]([https://github.com/tu-usuario/tu-repositorio/blob/main/imagen.jpg](https://github.com/ismaelac8/TestApiPostman/blob/main/img/SPOSTcreenshot%202024-06-09%20112221.png))
+LOGIN
+![Login](https://github.com/ismaelac8/TestApiPostman/blob/main/img/SPOSTcreenshot%202024-06-09%20112221.png)
 
-![Pass fail]([https://github.com/tu-usuario/tu-repositorio/blob/main/imagen.jpg](https://github.com/ismaelac8/TestApiPostman/blob/main/img/badpass.png))
+PASS FAIL
+![Pass fail](https://github.com/ismaelac8/TestApiPostman/blob/main/img/badpass.png)
 
-![MongoDB]([https://github.com/tu-usuario/tu-repositorio/blob/main/imagen.jpg](https://github.com/ismaelac8/TestApiPostman/blob/main/img/mongodb.png))
+MONGODB
+![MongoDB](https://github.com/ismaelac8/TestApiPostman/blob/main/img/mongodb.png)
 
 ## API Documentation
 
